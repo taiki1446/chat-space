@@ -1,0 +1,140 @@
+
+<body>
+
+<div class='wrapper'>
+  <div class='chat-side'>
+    <div class='side-header'>
+      <div class='side-header__box'>
+        <p class='side-header__box__user-name'>チャット太郎</p>
+        <ul class='side-header__box__menu'>
+        <li class='side-header__box__menu__new-group'>
+        <a href="/groups/new"><i class="fa fa-edit"></i>
+</a></li>
+<li class='side-header__box__menu__edit-user'>
+<a href="/users/1857/edit"><i class="fa fa-cog"></i>
+</a></li>
+</ul>
+</div>
+</div>
+<div class='groups'>
+<a href="/groups/4241/messages"><div class='group'>
+<p class='group__group-name'>5g</p>
+<p class='group__latest-message'>まだメッセージがありません</p>
+</div>
+</a><a href="/groups/4242/messages"><div class='group'>
+<p class='group__group-name'>6g</p>
+<p class='group__latest-message'>まだメッセージがありません</p>
+</div>
+</a><a href="/groups/4233/messages"><div class='group'>
+<p class='group__group-name'>グループ２</p>
+<p class='group__latest-message'>4</p>
+</div>
+</a><a href="/groups/4239/messages"><div class='group'>
+<p class='group__group-name'>3g</p>
+<p class='group__latest-message'>まだメッセージがありません</p>
+</div>
+</a><a href="/groups/4240/messages"><div class='group'>
+<p class='group__group-name'>4g</p>
+<p class='group__latest-message'>まだメッセージがありません</p>
+</div>
+</a><a href="/groups/4220/messages"><div class='group'>
+<p class='group__group-name'>グループ１</p>
+<p class='group__latest-message'>おおお</p>
+</div>
+</a><a href="/groups/4243/messages"><div class='group'>
+<p class='group__group-name'>7g</p>
+<p class='group__latest-message'>まだメッセージがありません</p>
+</div>
+</a><a href="/groups/4244/messages"><div class='group'>
+<p class='group__group-name'>8g</p>
+<p class='group__latest-message'>まだメッセージがありません</p>
+</div>
+</a><a href="/groups/4246/messages"><div class='group'>
+<p class='group__group-name'>9g</p>
+<p class='group__latest-message'>まだメッセージがありません</p>
+</div>
+</a><a href="/groups/4325/messages"><div class='group'>
+<p class='group__group-name'>aaa</p>
+<p class='group__latest-message'>まだメッセージがありません</p>
+</div>
+</a></div>
+</div>
+
+<div class='chat-main'>
+<div class='main-header'>
+<div class='main-header__left-box'>
+<h2 class='main-header__left-box__current-group' data-group_id='4233'>
+グループ２
+</h2>
+<ul class='main-header__left-box__member-list'>
+Member：
+<li class='main-header__left-box__member-list__member'>チャット太郎</li>
+</ul>
+</div>
+<a href="/groups/4233/edit"><div class='main-header__edit-btn'>Edit</div>
+</a></div>
+<div class='messages'>
+<div class='message' data-message_id='10382'>
+<div class='message__upper-info'>
+<p class='message__upper-info__talker'>チャット太郎</p>
+<p class='message__upper-info__date'>2019/11/05(Tue) 12:17:50</p>
+</div>
+<p class='message__text'>ああああ</p>
+
+</div>
+<div class='message' data-message_id='10388'>
+<div class='message__upper-info'>
+<p class='message__upper-info__talker'>チャット太郎</p>
+<p class='message__upper-info__date'>2019/11/05(Tue) 13:03:09</p>
+</div>
+<p class='message__text'>1</p>
+
+</div>
+<div class='message' data-message_id='10389'>
+<div class='message__upper-info'>
+<p class='message__upper-info__talker'>チャット太郎</p>
+<p class='message__upper-info__date'>2019/11/05(Tue) 13:03:11</p>
+</div>
+<p class='message__text'>2</p>
+
+</div>
+<div class='message' data-message_id='10390'>
+<div class='message__upper-info'>
+<p class='message__upper-info__talker'>チャット太郎</p>
+<p class='message__upper-info__date'>2019/11/05(Tue) 13:03:13</p>
+</div>
+<p class='message__text'>3</p>
+
+</div>
+<div class='message' data-message_id='10391'>
+<div class='message__upper-info'>
+<p class='message__upper-info__talker'>チャット太郎</p>
+<p class='message__upper-info__date'>2019/11/05(Tue) 13:03:14</p>
+</div>
+<p class='message__text'>4</p>
+
+</div>
+<div class='message' data-message_id='10392'>
+<div class='message__upper-info'>
+<p class='message__upper-info__talker'>チャット太郎</p>
+<p class='message__upper-info__date'>2019/11/05(Tue) 13:03:16</p>
+</div>
+<p class='message__text'>5</p>
+
+</div>
+
+</div>
+<div class='form'>
+<form class="new_message" id="new_message" enctype="multipart/form-data" action="/groups/4233/messages" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="OKr5N1Zh7NVwXaU8ouj0418BWDZUUf1Ab+m0Sdm5x64gfG6PdhmWIjNcaew5/zPJ738Gde7GRb3GgutXWJBpiA==" /><div class='input-box'>
+<input placeholder="type a message" class="input-box__text" type="text" name="message[content]" id="message_content" />
+<label class="input-box__image" for="message_image"><i class="fa fa-image"></i>
+<input class="input-box__image__file" type="file" name="message[image]" id="message_image" />
+</label></div>
+<input type="submit" name="commit" value="Send" class="submit-btn" data-disable-with="Send" />
+</form></div>
+</div>
+
+</div>
+
+</body>
+</html>
