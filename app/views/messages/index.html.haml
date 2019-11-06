@@ -33,11 +33,11 @@
         メインコンテンツ
 
       .main__footer
-        %form(class="main__footer__form" action="#")
-          %input(type="text" placeholder="type a message" class="main__footer__form__text")
-          %label(class="main__footer__form__label")
-            %input(type="file" class="main__footer__form__label__file")
+        .main__footer__form
+          %input.main__footer__form__text(type="text" placeholder="type a message")
+          %label.main__footer__form__label
+            %input.main__footer__form__label__file(type="file")
             =fa_icon 'image 2x', class: "main__footer__form__label__icon"
-          %input(type="submit" value="Send" class="main__footer__form__send")
+          %input.main__footer__form__send(type="submit" value="Send")
 
         
