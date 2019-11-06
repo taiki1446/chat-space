@@ -1,0 +1,43 @@
+.container
+  .SideBar
+    .sideHeader
+      .sideHeader__userName
+        taiki_sugiyama
+      .sideHeader__fontAwesome
+        =link_to root_path, class: "sideHeader__fontAwesome__btn" do
+          =fa_icon 'edit'
+        =link_to root_path, class: "sideHeader__fontAwesome__btn" do
+          =fa_icon 'cog'
+    .groupWrap
+      .group
+        =link_to  "グループ名", root_path, class: "group__name" 
+        .group__div
+        =link_to  "直近のチャット投稿", root_path, class: "group__newChat" 
+
+  .MainContents
+    .header
+      .header__headerWrap
+        .header__headerWrap__groupNname
+          グループ名
+        .header__headerWrap__menber
+          Member：山田　太郎 鈴木 abc
+      .header__groupEdit
+        Edit
+    .main
+      .main__mainWrap
+        .main__mainWrap__userName
+          チャット太郎
+        .main__mainWrap__date
+          2019/11/5(tus)17:00
+      .main__messages
+        メインコンテンツ
+
+      .main__footer
+        .main__footer__form
+          %input.main__footer__form__text(type="text" placeholder="type a message")
+          %label.main__footer__form__label
+            %input.main__footer__form__label__file(type="file")
+            =fa_icon 'image 2x', class: "main__footer__form__label__icon"
+          %input.main__footer__form__send(type="submit" value="Send")
+
+        
