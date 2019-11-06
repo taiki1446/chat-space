@@ -1,9 +1,9 @@
-%body
+.container
   .SideBar
-    %ul(class="sideHeader")
-      %li(class="sideHeader__userName")
+    .sideHeader
+      .sideHeader__userName
         taiki_sugiyama
-      %li(class="sideHeader__fontAwesome")
+      .sideHeader__fontAwesome
         =link_to root_path, class: "sideHeader__fontAwesome__btn" do
           =fa_icon 'edit'
         =link_to root_path, class: "sideHeader__fontAwesome__btn" do
@@ -32,12 +32,12 @@
       .main__messages
         メインコンテンツ
 
-      %footer(class="main__footer")
+      .main__footer
         %form(class="main__footer__form" action="#")
           %input(type="text" placeholder="type a message" class="main__footer__form__text")
-          %label(class="main__footer__form__label" style="cursor:pointer")
+          %label(class="main__footer__form__label")
             %input(type="file" class="main__footer__form__label__file")
             =fa_icon 'image 2x', class: "main__footer__form__label__icon"
-          %input(type="submit" value="Send" class="main__footer__form__send" style="cursor:pointer")
+          %input(type="submit" value="Send" class="main__footer__form__send")
 
         
