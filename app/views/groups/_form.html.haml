@@ -1,4 +1,4 @@
-= form_for(group, url: group_path) do |f|
+= form_for(group, url: action_path) do |f|
   - if group.errors.any?
     .chat-group-form__errors
       %h2= "#{group.errors.full_messages.count}件のエラーが発生しました。"

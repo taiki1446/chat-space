@@ -39,7 +39,7 @@
       overflow: scroll;
 
       .group {
-        padding-top: 20px;
+        padding-top: 40px;
         width: 100%;
         padding-left: 20px;
   
@@ -98,15 +98,18 @@
         line-height: 40px;
         border: 1px solid $lightBlue;
         color: $lightBlue;
+        text-decoration: none;
       }
     }
 
     .main {
       height: 100vh;
       background-color: #fafafa;
-      height: 543px;
+      height: 530px;
       padding-top: 6px;
+      padding-bottom: 30px;
       overflow: scroll;
+      
       
       &__mainWrap{
         padding-top: 40px;
