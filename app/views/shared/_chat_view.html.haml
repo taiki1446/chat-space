@@ -1,0 +1,40 @@
+.container
+  .SideBar
+    .sideHeader
+      .sideHeader__userName
+        = current_user.name
+      .sideHeader__fontAwesome
+        =link_to new_group_path, class: "sideHeader__fontAwesome__btn" do
+          =fa_icon 'edit'
+        =link_to edit_user_path(current_user), class: "sideHeader__fontAwesome__btn" do
+          =fa_icon 'cog'
+
+    .groupWrap
+      - current_user.group.each do |group|
+        .group
+          =link_to  group.name, group_messages_path(group), class: "group__name" 
+          .group__div
+          =link_to group.show_last_message, group_messages_path(group), class: "group__newChat" 
+  -# メッセージコントローラー時のみメインコンテンツ（チャット欄）を表示させる。
+  - if controller.controller_name == "messages"
+    .MainContents
+      .header
+        .header__headerWrap
+          .header__headerWrap__groupNname
+            = group.name
+          .header__headerWrap__menber
+            Member：
+            - @users.each do |user|
+              = user.name
+        = link_to "Edit", edit_group_path(params[:group_id]), class: "header__groupEdit"
+      .main
+        = render partial: 'shared/chat_messages', collection: @messages, as: "message"
+          
+        .main__footer
+          .main__footer__form
+            = form_for [@group, @message] do |f|
+              = f.text_field :content, class: 'main__footer__form__text', placeholder: 'type a message'
+              = f.label :image, class: 'main__footer__form__label' do
+                =fa_icon 'image 2x', class: "main__footer__form__label__icon"
+                = f.file_field :image, class: 'main__footer__form__label__file'
+              = f.submit 'Send', class: 'main__footer__form__send'
