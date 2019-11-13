@@ -12,11 +12,9 @@
     .groupWrap
       - current_user.group.each do |group|
         .group
-          =link_to group_messages_path(group), class: "group__link" do
-            .group__link__name
-              = group.name 
-            .group__link__newChat
-              = group.show_last_message
+          =link_to  group.name, group_messages_path(group), class: "group__name" 
+          .group__div
+          =link_to group.show_last_message, group_messages_path(group), class: "group__newChat" 
   -# メッセージコントローラー時のみメインコンテンツ（チャット欄）を表示させる。
   - if controller.controller_name == "messages"
     .MainContents
@@ -32,11 +30,11 @@
       .main
         = render partial: 'shared/chat_messages', collection: @messages, as: "message"
           
-      .main__footer
-        .main__footer__form
-          = form_for [@group, @message], html: {class: "messageForm"} do |f|
-            = f.text_field :content, class: 'main__footer__form__text', placeholder: 'type a message'
-            = f.label :image, class: 'main__footer__form__label' do
-              =fa_icon 'image 2x', class: "main__footer__form__label__icon"
-              = f.file_field :image, class: 'main__footer__form__label__file'
-            = f.submit 'Send', class: 'main__footer__form__send'
+        .main__footer
+          .main__footer__form
+            = form_for [@group, @message], html: {class: "messageForm"} do |f|
+              = f.text_field :content, class: 'main__footer__form__text', placeholder: 'type a message'
+              = f.label :image, class: 'main__footer__form__label' do
+                =fa_icon 'image 2x', class: "main__footer__form__label__icon"
+                = f.file_field :image, class: 'main__footer__form__label__file'
+              = f.submit 'Send', class: 'main__footer__form__send'
