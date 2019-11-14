@@ -88,7 +88,6 @@ $(function(){
   });
 
   let url_updata = location.href.match(/\/groups\/[\d]{1,}\/messages/);
-  console.log(url_updata);
   if (url_updata !== null){
     setInterval(reloadMessages, 7000);
   };
