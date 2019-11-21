@@ -24,13 +24,15 @@
     .chat-group-form__field--right
       
       #chat-group-users.js-add-user
-        .chat-group-user.clearfix.js-chat-member
+        - user_id = current_user.id
+        %div(class="chat-group-user clearfix" data-user-id=user_id)
           %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
           %p.chat-group-user__name= current_user.name
 
         - group.users.each do |user|
           - if current_user.name != user.name
-            .chat-group-user.clearfix.js-chat-member
+            - user_id = user.id
+            %div(class="chat-group-user clearfix" data-user-id=user_id)
               %input{name: "group[user_ids][]", type: "hidden", value: user.id}
               %p.chat-group-user__name
                 = user.name 
