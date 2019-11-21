@@ -20,7 +20,7 @@ $(function(){
   }
   function addDeleteUser(name, id) {
     let html = `
-    <div class="chat-group-user clearfix" id="${id}">
+    <div class="chat-group-user clearfix" id="${id}" data-user-id="${id}">
       <p class="chat-group-user__name">${name}</p>
       <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${id}" data-user-name="${name}">削除</div>
     </div>`;
@@ -31,18 +31,28 @@ $(function(){
     $(`#${userId}`).append(html);
   }
 
+  $(".chat-group-user__btn--remove").on("click", function() {
+    $(this).parent().remove();
+  });
+
   $("#user-search-field").on("keyup", function(){
     let input = $("#user-search-field").val();
+    let usersObj = $(".chat-group-user");
+    let usersId = [];
+    usersObj.filter(function(){
+      usersId.push($(this).data("user-id"));
+    });  
+
+
     console.log(input);
     $.ajax({
       type: "GET",
       url: "/users",
-      data: { keyword: input },
+      data: { keyword: input, users_id: usersId},
       dataType: "json"
     })
     .done(function(users){
       $("#user-search-result").empty();
-      console.log(`${users.length}件`);
       if (users.length !== 0) {
         users.forEach(function(user) {
           addUser(user);
@@ -57,6 +67,7 @@ $(function(){
       alert("インクリメンタルサーチに失敗しました。")
     });
 
+    $(document).off('click', ".chat-group-user__btn--add");
     $(document).on("click", ".chat-group-user__btn--add", function() {
       let userName = $(this).attr("data-user-name");
       let userId = $(this).attr("data-user-id");
