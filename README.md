@@ -1,3 +1,25 @@
+# 簡易チャットアプリ
+http://52.193.71.36/
+### 作成目的
+以下の点について重点的に学習を行うため。  
+・railsの基本的な機能  
+・一般的なメッセージ投稿機能付きwebアプリの作成
+### 環境
+・Rails 5.0.7.2  
+・ruby 2.5.1  
+・MySQL    
+・AWS
+### 機能概要
+・メッセージ投稿  
+・グループ作成、編集    
+### 使用した技術
+・非同期通信（Ajax）  
+・自動更新（メッセージ自動読み込み）  
+・Haml  
+・scss  
+・gem : devise, pry-rails, font-awesome-rails, carrierwave, mini_magick, fog-aws
+
+
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
